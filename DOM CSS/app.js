@@ -5,8 +5,9 @@ const descriptionInput = document.querySelector('input.description');
 const descriptionP = document.querySelector('p.description');
 const descriptionButton = document.querySelector('button.description');
 
-const addInput = document.querySelector('input.add');
-const addButton = document.querySelector('button.addButton');
+const addInput = document.querySelector('input.addIn');
+const addButton = document.querySelector('button.addBut');
+
 const removeButton = document.querySelector('button.removeItem');
 
 toggleList.addEventListener('click', ()=> {
@@ -24,15 +25,15 @@ descriptionButton.addEventListener ('click', () => {
    });
 
 addButton.addEventListener('click', () => {
-  let ul = document.getElementByTagName ('ul')[0];
+  let ul = document.getElementsByTagName ('ul')[0];
   let li = document.createElement('li');
   li.textContent = addInput.value;
   ul.appendChild(li);
-  li.textContent = ' ';
+  addInput.value = '';
 });
 
-removeItemButton.addEventListener('click', () => {
-  let ul = document.getElementByTagName ('ul')[0];
+removeButton.addEventListener('click', () => {
+  let ul = document.getElementsByTagName ('ul')[0];
   let li = document.querySelector('li:last-child');
   ul.removeChild(li);
   
